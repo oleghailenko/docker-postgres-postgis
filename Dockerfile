@@ -18,8 +18,8 @@ RUN /bin/echo -e "                                                              
 USER postgres
 
 RUN /etc/init.d/postgresql start &&                                               \
-psql -c "CREATE USER \"user\" WITH PASSWORD 'password';" &&                           \
-psql -c "CREATE DATABASE db WITH OWNER \"user\";"  &&                                 \
+psql -c "CREATE USER \"user\" WITH PASSWORD 'password';" &&                       \
+psql -c "CREATE DATABASE db WITH OWNER \"user\";"  &&                             \
 psql -c "CREATE EXTENSION postgis; CREATE EXTENSION postgis_topology;" db
 
 EXPOSE 5432
